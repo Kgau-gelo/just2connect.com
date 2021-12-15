@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body onload="myFnc()">
+ <div id="container">
+
+ 	<h1>Coming Soon!</h1>
+ 	<!-- <img src="230913607_4451815088196527_2066741925176623101_n.jpg" alt="money heist"> -->
+
+ 	<div id="countdown">
+
+ 		<div id="count-weeks">
+ 			<h3 id="weeks">TIME</h3>
+ 			<h3 class="value">weeks</h3>
+ 		</div>
+
+ 		<div id="count-days">
+ 			<h3 id="days">TIME</h3>
+ 			<h3 class="value">days</h3>
+ 		</div>
+
+ 		<div id="count-hours">
+ 			<h3 id="hours">TIME</h3>
+ 			<h3 class="value">hours</h3>
+ 		</div>
+
+ 		<div id="count-minutes">
+ 			<h3 id="minutes">TIME</h3>
+ 			<h3 class="value">minutes</h3>
+ 		</div>
+
+ 		<div id="count-seconds">
+ 			<h3 id="second">TIME</h3>
+ 			<h3 class="value">second</h3>
+ 		</div>
+ 	</div>
+ 	 <img src="230913607_4451815088196527_2066741925176623101_n.jpg" alt="money heist">
+ </div>
+</body>
+	<script type="text/javascript">
+		function myFnc(){
+			const futureDay=new Date("Sep 03, 2021").getTime();
+			const presentDay=new Date().getTime();
+			const gap=futureDay-presentDay;
+
+			//how does time work,getting d, h, m, and s.
+			const second=1000;
+			const minutes=second*60;
+			const hours=minutes*60;
+			const day=hours*24;
+			const week=day*7;
+
+			//how many d, h, m, and s are left before the actual day
+			// const dayLeft=Math.floor(gap/day);
+			// const hoursLeft=Math.floor((gap%day)/hours);
+			// const minuteLeft=Math.floor((gap%hours)/minutes);
+			// const secondLeft=Math.floor((gap%minutes)/second);
+			/********************************************************/
+			const weeksLeft=Math.floor(gap/week);
+			const dayLeft=Math.floor((gap%week)/day);
+			const hoursLeft=Math.floor((gap%day)/hours);
+			const minuteLeft=Math.floor((gap%hours)/minutes);
+			const secondLeft=Math.floor((gap%minutes)/second);
+
+			//converting to two digit number
+			const wl=(weeksLeft<10)?  "0"+weeksLeft	 :weeksLeft;
+			const dl=(dayLeft<10)?    "0"+dayLeft	 :dayLeft;
+			const hl=(hoursLeft<10)?  "0"+hoursLeft	 :hoursLeft;
+			const ml=(minuteLeft<10)? "0"+minuteLeft :minuteLeft;
+			const sl=(secondLeft<10)? "0"+secondLeft :secondLeft;
+			//displays
+			// document.getElementById('weeks').innerText=weeksLeft;
+			// document.getElementById('days').innerText=dayLeft;
+			// document.getElementById('hours').innerText=hoursLeft;
+			// document.getElementById('minutes').innerText=minuteLeft;
+			// document.getElementById('second').innerText=secondLeft;
+			/********************************************************/
+			document.getElementById('weeks').innerText=wl;
+			document.getElementById('days').innerText=dl;
+			document.getElementById('hours').innerText=hl;
+			document.getElementById('minutes').innerText=ml;
+			document.getElementById('second').innerText=sl;
+		}
+		setInterval("myFnc()",1000);
+
+	</script>
+</html>

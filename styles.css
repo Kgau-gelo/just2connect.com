@@ -1,0 +1,43 @@
+*{
+	margin:0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: "Arial Black", cursive;
+	color: snow;
+}
+#countdown{
+	display: flex;
+	justify-content: space-around;
+	padding-bottom: 3%;
+	text-align: center;
+}
+h1{
+	padding: 2rem;
+	text-align: center;
+	font-family:cursive;
+	font-size:5rem;
+}
+#container{
+	background-image: url("photo-1563099045-dd7d9aebaa49.jpg");
+	background-attachment: fixed;
+	background-size:cover;
+	background-repeat: no-repeat;
+	height:100%;
+}
+img{
+	width: 50%;
+	height:60vh;
+	padding:5%;
+	margin-left: 25%;
+	border-radius: 35% 10% ;
+}
+#count-weeks,
+#count-days,
+#count-hours,
+#count-minutes,
+#count-seconds{
+	background-color: rgba(3, 3, 3, 0.4);
+	padding:1%;
+	border-radius: 35% 10% ;
+	font-size: 2em;
+}
